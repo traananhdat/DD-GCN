@@ -134,7 +134,7 @@ def get_raw_skes_data():
 if __name__ == '__main__':
     save_path = './'
 
-    skes_path = '../nturgbd_raw/nturgb+d_skeletons/'
+    skes_path = '/kaggle/input/nturgbd-skeletons-s001-to-s017/nturgb+d_skeletons/'
     stat_path = osp.join(save_path, 'statistics')
     if not osp.exists('./raw_data'):
         os.makedirs('./raw_data')
