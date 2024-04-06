@@ -114,6 +114,9 @@ def get_raw_skes_data():
     # frames_cnt = np.zeros(num_files, dtype=int)
     frames_cnt = np.zeros(num_files, dtype=int)
 
+    # count 
+    count = 0
+
 
     for (idx, ske_name) in enumerate(skes_name):
         bodies_data = get_raw_bodies_data(skes_path, ske_name, frames_drop_skes, frames_drop_logger)
@@ -122,6 +125,10 @@ def get_raw_skes_data():
         if (idx + 1) % 1000 == 0:
             print('Processed: %.2f%% (%d / %d)' % \
                   (100.0 * (idx + 1) / num_files, idx + 1, num_files))
+        
+        if count == 3000:
+            break
+        count += 1
 
     with open(save_data_pkl, 'wb') as fw:
         pickle.dump(raw_skes_data, fw, pickle.HIGHEST_PROTOCOL)
