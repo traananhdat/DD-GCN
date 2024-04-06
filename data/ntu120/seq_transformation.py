@@ -142,10 +142,11 @@ def split_train_val(train_indices, method='sklearn', ratio=0.05):
     In fact, I thought these two methods are equal as they got the same performance.
 
     """
+    number_rand = 3000 # 10000
     if method == 'sklearn':
-        return train_test_split(train_indices, test_size=ratio, random_state=10000)
+        return train_test_split(train_indices, test_size=ratio, random_state=number_rand)
     else:
-        np.random.seed(10000)
+        np.random.seed(number_rand)
         np.random.shuffle(train_indices)
         val_num_skes = int(np.ceil(0.05 * len(train_indices)))
         val_indices = train_indices[:val_num_skes]
