@@ -125,9 +125,9 @@ def get_raw_skes_data():
             print('Processed: %.2f%% (%d / %d)' % \
                   (100.0 * (idx + 1) / num_files, idx + 1, num_files))
         
-        if count == 3000:
-            break
-        count += 1
+        # if count == 3000:
+        #     break
+        # count += 1
 
     with open(save_data_pkl, 'wb') as fw:
         pickle.dump(raw_skes_data, fw, pickle.HIGHEST_PROTOCOL)

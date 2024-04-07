@@ -142,7 +142,7 @@ def split_train_val(train_indices, method='sklearn', ratio=0.05):
     In fact, I thought these two methods are equal as they got the same performance.
 
     """
-    number_rand = 3000 # 10000
+    number_rand = 10000 # 10000
     if method == 'sklearn':
         return train_test_split(train_indices, test_size=ratio, random_state=number_rand)
     else:
